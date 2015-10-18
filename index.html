@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="whineApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Whine Service</title>
+	<base href="/">
+
+	<!-- angular -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	
+	<!-- angular animate -->
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+	<!-- angular resource -->
+	<script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+	<!-- custom magic -->
+	<script type="text/javascript" src="app.js"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+	<div class="container">		
+		<header>
+			<h1>&#128544; Whine Service &#127863;</h1>
+		</header>
+		<div>
+			<div>
+				My 
+				<select name="nounSelect" ng-model="data.nounSelect">
+					<option value="pet">pet</option>
+					<option value="code">code</option>
+					<option value="crush">crush</option>
+					<option value="partner">partner</option>
+					<option value="knee">knee</option>
+				</select> 
+				<select name="verbSelect" ng-model="data.verbSelect">
+					<option value="can't even">can't even</option>
+					<option value="doesn't know I exist">doesn't know I exist</option>
+					<option value="can't buy me love">can't buy me love</option>
+					<option value="doesn't support my life goals">doesn't support my life goals</option>
+					<option value="forgot my birthday again">forgot my birthday again</option>
+				</select>
+				<button class="btn btn-primary">Whine</button>
+			</div>
+			<div>
+				Your {{data.nounSelect}} {{data.verbSelect}}?
+			</div>
+			<div id="platitude">
+				Poor baby.
+			</div>
+			<div>
+				Here, have a glass of Chardonnay.
+			</div>
+			<div>
+				Its fresh, oaky notes will make you forget all about your {{data.nounSelect}}.
+			</div>
+			<div>
+				<button class="btn btn-primary">Anything else?</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
