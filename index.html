@@ -15,15 +15,19 @@
 	<script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
 	<!-- custom magic -->
 	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="wines.js"></script>
 	<!-- bootstrap -->
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<!-- all my css love -->
+	<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body ng-controller="WineCtrl">
 	<div class="container">		
 		<header>
 			<h1>&#128544; Whine Service &#127863;</h1>
 		</header>
 		<div>
+			<div>Go ahead. Get it off your chest.</div>
 			<div>
 				My 
 				<select name="nounSelect" ng-model="data.nounSelect">
@@ -40,22 +44,24 @@
 					<option value="doesn't support my life goals">doesn't support my life goals</option>
 					<option value="forgot my birthday again">forgot my birthday again</option>
 				</select>
-				<button class="btn btn-primary">Whine</button>
+				<a href="#" class="btn btn-primary" ng-click="showNext = !showNext" ng-class="{ active: showNext }">Whine</a>
 			</div>
-			<div>
-				Your {{data.nounSelect}} {{data.verbSelect}}?
-			</div>
-			<div id="platitude">
-				Poor baby.
-			</div>
-			<div>
-				Here, have a glass of Chardonnay.
-			</div>
-			<div>
-				Its fresh, oaky notes will make you forget all about your {{data.nounSelect}}.
-			</div>
-			<div>
-				<button class="btn btn-primary">Anything else?</button>
+			<div ng-show="showNext">
+				<div>
+					Your {{data.nounSelect}} {{data.verbSelect}}?
+				</div>
+				<div id="platitude">
+					Poor baby.
+				</div>
+				<div>
+					Here, have a glass of {{wine}}.
+				</div>
+				<div>
+					This {{describe}} wine with hints of {{hintOf1}} and {{hintOf2}} will make you forget all about your {{data.nounSelect}}.
+				</div>
+				<div>
+					<button class="btn btn-primary" ng-click="reload()">Whine Again</button>
+				</div>				
 			</div>
 		</div>
 	</div>
