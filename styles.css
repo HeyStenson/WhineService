@@ -1,21 +1,25 @@
 h1 {
-  font: 50px/45px 'Open Sans Condensed', sans-serif;
-      font-size: 50px;
-      line-height: 45px;
-      font-family: 'Open Sans Condensed', sans-serif;
-      color: #403E2F;
-      text-transform: uppercase;
+  font-size: 70px;
+  line-height: 45px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #403E2F;
+  text-transform: uppercase;
 }
 
 .intro {
   font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 300;
 }
 
 .app-box {
   margin-top:35px;
   width: 600px;
+}
+
+.whine-body {
+  font-size: 16px;
+  font-family: 'Lora', serif;
 }
 
 .ng-hide-remove { 
