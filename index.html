@@ -15,40 +15,51 @@
 	<script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
 	<!-- custom magic -->
 	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="wines.js"></script>
 	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-css-only/css/bootstrap.css">
 	<!-- all my css love -->
 	<link rel="stylesheet" href="styles.css">
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="WineCtrl">
-	<div class="container">		
-		<header>
+	<div class="container app-box">		
+		<header class="page-header text-center">
 			<h1>&#128544; Whine Service &#127863;</h1>
 		</header>
 		<div>
-			<div>Go ahead. Get it off your chest.</div>
-			<div>
+			<div class="intro text-center">Go ahead. Get it off your chest.</div>
+			<div ng-hide="showFirst" class="text-center">
 				My 
-				<select name="nounSelect" ng-model="data.nounSelect">
+				<select name="nounSelect" ng-model="data.nounSelect" class="dropdown">
 					<option value="pet">pet</option>
 					<option value="code">code</option>
 					<option value="crush">crush</option>
 					<option value="partner">partner</option>
 					<option value="knee">knee</option>
+					<option value="mother">mother</option>
+					<option value="laptop">laptop</option>
+					<option value="real estate broker">real estate broker</option>
+					<option value="BFF">BFF</option>
+					<option value="life">life</option>
 				</select> 
-				<select name="verbSelect" ng-model="data.verbSelect">
+				<select name="verbSelect" ng-model="data.verbSelect" class="dropdown">
 					<option value="can't even">can't even</option>
 					<option value="doesn't know I exist">doesn't know I exist</option>
 					<option value="can't buy me love">can't buy me love</option>
 					<option value="doesn't support my life goals">doesn't support my life goals</option>
 					<option value="forgot my birthday again">forgot my birthday again</option>
+					<option value="talks about me behind my back">talks about me behind my back</option>
+					<option value="ate all the ice cream">ate all the ice cream</option>
+					<option value="has awful taste in movies">has awful taste in movies</option>
+					<option value="listens to a lot of Miley Cyrus">listens to a lot of Miley Cyrus</option>
+					<option value="doesn't value my opinion">doesn't value my opinion</option>
 				</select>
-				<a href="#" class="btn btn-primary" ng-click="showNext = !showNext" ng-class="{ active: showNext }">Whine</a>
+				<a href="#" class="btn btn-primary" ng-click="showNext = !showNext; showFirst = !showFirst" ng-class="{ active: showNext }">Whine</a>
 			</div>
-			<div ng-show="showNext">
+			<div ng-show="showNext" class="text-center">
 				<div>
-					Your {{data.nounSelect}} {{data.verbSelect}}?
+					<h3>My {{data.nounSelect}} {{data.verbSelect}}.</h3>
 				</div>
 				<div id="platitude">
 					Poor baby.
@@ -59,6 +70,7 @@
 				<div>
 					This {{describe}} wine with hints of {{hintOf1}} and {{hintOf2}} will make you forget all about your {{data.nounSelect}}.
 				</div>
+				<br>
 				<div>
 					<button class="btn btn-primary" ng-click="reload()">Whine Again</button>
 				</div>				
